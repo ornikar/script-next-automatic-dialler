@@ -16,7 +16,7 @@
 (function() {
     'use strict';
   
-    const delayClickNextButton = 5000; // 5 seconds
+    const delayClickNextButton = 20000; // 20 seconds
     const delayCheckScriptActivity = 30000; // 30 seconds
 
     // Define a function that tries to find the next button and click it
