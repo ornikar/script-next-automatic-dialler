@@ -4,7 +4,7 @@
 // @version      1.4
 // @downloadURL  https://github.com/ornikar/script-next-automatic-dialler/raw/main/uat-autonextdial.user.js
 // @updateURL    https://github.com/ornikar/script-next-automatic-dialler/raw/main/uat-autonextdial.user.js
-// @description  Automatically click the next button on the dialler component every 5 seconds
+// @description  Automatically click the next button on the dialler component every 20 seconds
 // @author       Team Salesforce Ornikar
 // @match        https://ornikar--uat.sandbox.lightning.force.com/lightning/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=force.com
