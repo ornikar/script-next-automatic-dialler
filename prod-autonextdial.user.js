@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PROD Auto Next Dialler
 // @namespace    Ornikar-Salesforce
-// @version      1.0
+// @version      1.1
 // @downloadURL  https://github.com/ornikar/script-next-automatic-dialler/raw/main/prod-autonextdial.user.js
 // @updateURL    https://github.com/ornikar/script-next-automatic-dialler/raw/main/prod-autonextdial.user.js
 // @description  Automatically click the next button on the dialler component every 5 seconds
@@ -11,12 +11,12 @@
 // @grant        none
 // ==/UserScript==
 
-// Date : 06-02-2024
+// Date : 09-02-2024
 
 (function() {
     'use strict';
   
-    const delayClickNextButton = 5000; // 5 seconds
+    const delayClickNextButton = 20000; // 20 seconds
     const delayCheckScriptActivity = 30000; // 30 seconds
 
     // Define a function that tries to find the next button and click it
