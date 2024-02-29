@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PROD Auto Next Dialler
 // @namespace    Ornikar-Salesforce
-// @version      1.1
+// @version      1.6
 // @downloadURL  https://github.com/ornikar/script-next-automatic-dialler/raw/main/prod-autonextdial.user.js
 // @updateURL    https://github.com/ornikar/script-next-automatic-dialler/raw/main/prod-autonextdial.user.js
 // @description  Automatically click the next button on the dialler component every 5 seconds
@@ -11,26 +11,30 @@
 // @grant        none
 // ==/UserScript==
 
-// Date : 09-02-2024
+// Date : 29-02-2024
 
 (function() {
     'use strict';
-  
-    const delayClickNextButton = 20000; // 20 seconds
+
+    const delayClickNextButton = 5000; // 20 seconds
     const delayCheckScriptActivity = 30000; // 30 seconds
 
     // Define a function that tries to find the next button and click it
     function clickNextButton() {
-        // Try to find the next button by its selector
-        let buttonNext = document.querySelector("button.slds-button.slds-button--neutral.moveToNextButton.uiButton");
-        // Check if the next button exists
-        if (buttonNext) {
-            // Click the next button, log a message
-            buttonNext.click();
-            console.log("Button next clicked");
-        } else {
-            // Log a message that the next button is not found
-            console.log("Button next not found");
+        let isUserOnline = checkOnlineStatus();
+
+        if (isUserOnline) {
+            // Try to find the next button by its selector
+            let buttonNext = document.querySelector("button.slds-button.slds-button--neutral.moveToNextButton.uiButton");
+            // Check if the next button exists
+            if (buttonNext) {
+                // Click the next button, log a message
+                buttonNext.click();
+                console.log("Button next clicked");
+            } else {
+                // Log a message that the next button is not found
+                console.log("Button next not found");
+            }
         }
     }
 
@@ -47,8 +51,26 @@
         }
     }
 
+    // Function that checks if the user is online before clicking on the next button
+    function checkOnlineStatus() {
+    // Try to find the span with the title "Online Status".
+    let spanEN = document.querySelector('span[title="Online Status"]');
+    let spanFR = document.querySelector('span[title="Statut en ligne"]');
+    // Check if the span exists
+    if (spanEN || spanFR) {
+        // If found, return true
+        console.log("Element with 'Online Status' found");
+        return true;
+    } else {
+        // If not found, return false
+        console.log("Element with 'Online Status' not found");
+        return false;
+    }
+}
+
+
     // Set different intervals for the functions
-    let intervalClickNext = setInterval(clickNextButton, delayClickNextButton);
     let intervalClickUserScriptActivity = setInterval(sendUserActivity, delayCheckScriptActivity);
+    let intervalClickNext = setInterval(clickNextButton, delayClickNextButton);
 
 })();
