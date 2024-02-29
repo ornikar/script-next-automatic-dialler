@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         PROD Auto Next Dialler
 // @namespace    Ornikar-Salesforce
-// @version      1.6
+// @version      1.7
 // @downloadURL  https://github.com/ornikar/script-next-automatic-dialler/raw/main/prod-autonextdial.user.js
 // @updateURL    https://github.com/ornikar/script-next-automatic-dialler/raw/main/prod-autonextdial.user.js
 // @description  Automatically click the next button on the dialler component every 5 seconds
 // @author       Team Salesforce Ornikar
-// @match        https://ornikar.lightning.force.com/lightning/*
+// @match        https://*.lightning.force.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=force.com
 // @grant        none
 // ==/UserScript==
