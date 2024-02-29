@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         UAT Auto Next Dialler
 // @namespace    Ornikar-Salesforce
-// @version      1.7
+// @version      1.6
 // @downloadURL  https://github.com/ornikar/script-next-automatic-dialler/raw/main/uat-autonextdial.user.js
 // @updateURL    https://github.com/ornikar/script-next-automatic-dialler/raw/main/uat-autonextdial.user.js
 // @description  Automatically click the next button on the dialler component every 20 seconds
 // @author       Team Salesforce Ornikar
-// @match        https://*.lightning.force.com/*
+// @match        https://*.lightning.force.com/lightning/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=force.com
 // @grant        none
 // ==/UserScript==
@@ -46,7 +46,6 @@
         if (buttonActiveScriptUser) {
             // Call Aura javascript function then call apex to store activity on user record
             buttonActiveScriptUser.click();
-            console.log("Button check script user activity clicked");
         } else {
             console.log("Button check script user activity not found");
         }
