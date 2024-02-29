@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         UAT Auto Next Dialler
 // @namespace    Ornikar-Salesforce
-// @version      1.5
+// @version      1.6
 // @downloadURL  https://github.com/ornikar/script-next-automatic-dialler/raw/main/uat-autonextdial.user.js
 // @updateURL    https://github.com/ornikar/script-next-automatic-dialler/raw/main/uat-autonextdial.user.js
 // @description  Automatically click the next button on the dialler component every 20 seconds
@@ -11,7 +11,7 @@
 // @grant        none
 // ==/UserScript==
 
-// Date : 14-02-2024
+// Date : 29-02-2024
 
 (function() {
     'use strict';
@@ -54,9 +54,10 @@
     // Function that checks if the user is online before clicking on the next button
     function checkOnlineStatus() {
     // Try to find the span with the title "Online Status".
-    let span = document.querySelector('span[title="Online Status"]');
+    let spanEN = document.querySelector('span[title="Online Status"]');
+    let spanFR = document.querySelector('span[title="Statut en ligne"]');
     // Check if the span exists
-    if (span) {
+    if (spanEN || spanFR) {
         // If found, return true
         console.log("Element with 'Online Status' found");
         return true;
@@ -69,7 +70,7 @@
 
 
     // Set different intervals for the functions
-    let intervalClickNext = setInterval(clickNextButton, delayClickNextButton);
     let intervalClickUserScriptActivity = setInterval(sendUserActivity, delayCheckScriptActivity);
+    let intervalClickNext = setInterval(clickNextButton, delayClickNextButton);
 
 })();
