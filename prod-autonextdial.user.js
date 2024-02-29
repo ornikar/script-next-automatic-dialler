@@ -46,6 +46,7 @@
         if (buttonActiveScriptUser) {
             // Call Aura javascript function then call apex to store activity on user record
             buttonActiveScriptUser.click();
+            console.log("Button check script user activity clicked");
         } else {
             console.log("Button check script user activity not found");
         }
