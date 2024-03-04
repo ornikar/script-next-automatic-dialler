@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         UAT Auto Next Dialler
 // @namespace    Ornikar-Salesforce
-// @version      1.6
+// @version      1.7
 // @downloadURL  https://github.com/ornikar/script-next-automatic-dialler/raw/main/uat-autonextdial.user.js
 // @updateURL    https://github.com/ornikar/script-next-automatic-dialler/raw/main/uat-autonextdial.user.js
 // @description  Automatically click the next button on the dialler component every 20 seconds
@@ -11,10 +11,12 @@
 // @grant        none
 // ==/UserScript==
 
-// Date : 29-02-2024
+// Date : 04-03-2024
 
 (function() {
     'use strict';
+
+    console.log('Test maj auto 1.0');
 
     const delayClickNextButton = 20000; // 20 seconds
     const delayCheckScriptActivity = 30000; // 30 seconds
