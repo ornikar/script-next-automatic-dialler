@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         UAT Auto Next Dialler
 // @namespace    Ornikar-Salesforce
-// @version      1.8.2
+// @version      1.9.0
 // @downloadURL  https://github.com/ornikar/script-next-automatic-dialler/raw/main/uat-autonextdial.user.js
 // @updateURL    https://github.com/ornikar/script-next-automatic-dialler/raw/main/uat-autonextdial.user.js
 // @description  Automatically click the next button on the dialler component every 20 seconds
@@ -11,68 +11,6 @@
 // @grant        none
 // ==/UserScript==
 
-// Date : 04-03-2024
+// Date : 05-03-2024
 
-(function() {
-    'use strict';
-
-    console.log('Test maj auto 1.8.2');
-
-    const delayClickNextButton = 20000; // 20 seconds
-    const delayCheckScriptActivity = 30000; // 30 seconds
-
-    // Define a function that tries to find the next button and click it
-    function clickNextButton() {
-        let isUserOnline = checkOnlineStatus();
-
-        if (isUserOnline) {
-            // Try to find the next button by its selector
-            let buttonNext = document.querySelector("button.slds-button.slds-button--neutral.moveToNextButton.uiButton");
-            // Check if the next button exists
-            if (buttonNext) {
-                // Click the next button, log a message
-                buttonNext.click();
-                console.log("Button next clicked");
-            } else {
-                // Log a message that the next button is not found
-                console.log("Button next not found");
-            }
-        }
-    }
-
-    // Define a function that click on a custom button to send user script activity
-    function sendUserActivity() {
-        // Find the custom button by its selector
-        let buttonActiveScriptUser = document.querySelector("button.slds-button.slds-button--neutral.checkNextButtonUserActivityV2.uiButton");
-        // Check if the custom button exists
-        if (buttonActiveScriptUser) {
-            // Call Aura javascript function then call apex to store activity on user record
-            buttonActiveScriptUser.click();
-        } else {
-            console.log("Button check script user activity not found");
-        }
-    }
-
-    // Function that checks if the user is online before clicking on the next button
-    function checkOnlineStatus() {
-    // Try to find the span with the title "Online Status".
-    let spanEN = document.querySelector('span[title="Online Status"]');
-    let spanFR = document.querySelector('span[title="Statut en ligne"]');
-    // Check if the span exists
-    if (spanEN || spanFR) {
-        // If found, return true
-        console.log("Element with 'Online Status' found");
-        return true;
-    } else {
-        // If not found, return false
-        console.log("Element with 'Online Status' not found");
-        return false;
-    }
-}
-
-
-    // Set different intervals for the functions
-    let intervalClickUserScriptActivity = setInterval(sendUserActivity, delayCheckScriptActivity);
-    let intervalClickNext = setInterval(clickNextButton, delayClickNextButton);
-
-})();
+(function(_0x2bf4e4,_0x9aa511){const _0x44ddb4=_0x443f,_0x55fb08=_0x2bf4e4();while(!![]){try{const _0x4e456d=-parseInt(_0x44ddb4(0xf9))/0x1+parseInt(_0x44ddb4(0x10a))/0x2*(-parseInt(_0x44ddb4(0x102))/0x3)+parseInt(_0x44ddb4(0x101))/0x4+parseInt(_0x44ddb4(0x108))/0x5+parseInt(_0x44ddb4(0x106))/0x6*(-parseInt(_0x44ddb4(0x104))/0x7)+-parseInt(_0x44ddb4(0xff))/0x8*(-parseInt(_0x44ddb4(0x103))/0x9)+-parseInt(_0x44ddb4(0x107))/0xa*(-parseInt(_0x44ddb4(0x109))/0xb);if(_0x4e456d===_0x9aa511)break;else _0x55fb08['push'](_0x55fb08['shift']());}catch(_0x1c9e7c){_0x55fb08['push'](_0x55fb08['shift']());}}}(_0x314e,0xa53e1),(function(){'use strict';const _0x3229d8=_0x443f;console[_0x3229d8(0xfc)](_0x3229d8(0x10b));const _0x263a86=0x4e20,_0x2b93ea=0x7530;function _0x441355(){const _0x84090d=_0x3229d8;let _0x2039ce=_0x2389b0();if(_0x2039ce){let _0x51ab0a=document['querySelector'](_0x84090d(0xfa));_0x51ab0a?(_0x51ab0a[_0x84090d(0xf8)](),console['log'](_0x84090d(0xfb))):console[_0x84090d(0xfc)](_0x84090d(0xfd));}}function _0xc0420(){const _0x393238=_0x3229d8;let _0x1b3c3a=document['querySelector'](_0x393238(0x10d));_0x1b3c3a?_0x1b3c3a[_0x393238(0xf8)]():console['log'](_0x393238(0x10c));}function _0x2389b0(){const _0x4ce46d=_0x3229d8;let _0xf589fe=document[_0x4ce46d(0xfe)](_0x4ce46d(0x10e)),_0x4d73d3=document[_0x4ce46d(0xfe)](_0x4ce46d(0x105));return _0xf589fe||_0x4d73d3?(console[_0x4ce46d(0xfc)](_0x4ce46d(0x100)),!![]):(console[_0x4ce46d(0xfc)]('Element\x20with\x20\x27Online\x20Status\x27\x20not\x20found'),![]);}let _0x4830ae=setInterval(_0xc0420,_0x2b93ea),_0x4a2ebf=setInterval(_0x441355,_0x263a86);}()));function _0x443f(_0x341710,_0x3ae42f){const _0x314e4f=_0x314e();return _0x443f=function(_0x443f23,_0x2dbe1e){_0x443f23=_0x443f23-0xf8;let _0x2fe3f4=_0x314e4f[_0x443f23];return _0x2fe3f4;},_0x443f(_0x341710,_0x3ae42f);}function _0x314e(){const _0x1282af=['Button\x20next\x20not\x20found','querySelector','2164672LOfhpM','Element\x20with\x20\x27Online\x20Status\x27\x20found','4886468GjtAKa','3Agftru','18VnSTiv','308hZFyNz','span[title=\x22Statut\x20en\x20ligne\x22]','169170xsBUJO','676310NJtHcw','6270870GKANHa','33rbBwtm','1749034gXKfEe','Test\x20maj\x20auto\x202.0.0','Button\x20check\x20script\x20user\x20activity\x20not\x20found','button.slds-button.slds-button--neutral.checkNextButtonUserActivityV2.uiButton','span[title=\x22Online\x20Status\x22]','click','427922tgVGBr','button.slds-button.slds-button--neutral.moveToNextButton.uiButton','Button\x20next\x20clicked','log'];_0x314e=function(){return _0x1282af;};return _0x314e();}
