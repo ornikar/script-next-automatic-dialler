@@ -1,17 +1,18 @@
 // ==UserScript==
 // @name         UAT Auto Next Dialler
 // @namespace    Ornikar-Salesforce
-// @version      1.9.1
+// @version      1.9.2
 // @downloadURL  https://github.com/ornikar/script-next-automatic-dialler/raw/main/uat-autonextdial.user.js
 // @updateURL    https://github.com/ornikar/script-next-automatic-dialler/raw/main/uat-autonextdial.user.js
 // @description  Automatically click the next button on the dialler component every 20 seconds
 // @author       Team Salesforce Ornikar
-// @match        https://*.lightning.force.com/lightning/*
+// @match        https://*.lightning.force.com/lightning*
+// @match        https://*.lightning.force.com/one*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=force.com
 // @grant        none
 // ==/UserScript==
 
-// Date : 06-03-2024
+// Date : 07-03-2024
 
 (function() {
     'use strict';

@@ -1,16 +1,17 @@
 // ==UserScript==
 // @name         UAT Auto Next Dialler
 // @namespace    Ornikar-Salesforce
-// @version      1.9.1
+// @version      1.9.2
 // @downloadURL  https://github.com/ornikar/script-next-automatic-dialler/raw/main/uat-autonextdial.user.js
 // @updateURL    https://github.com/ornikar/script-next-automatic-dialler/raw/main/uat-autonextdial.user.js
 // @description  Automatically click the next button on the dialler component every 20 seconds
 // @author       Team Salesforce Ornikar
-// @match        https://*.lightning.force.com/lightning/*
+// @match        https://*.lightning.force.com/lightning*
+// @match        https://*.lightning.force.com/one*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=force.com
 // @grant        none
 // ==/UserScript==
 
-// Date : 06-03-2024
+// Date : 07-03-2024
 
 function _0x45d1(){const _0x5c4b43=['Element\x20with\x20\x27Online\x20Status\x27\x20found','824061NlyGSE','span[title=\x22Online\x20Status\x22]','span[title=\x22Statut\x20en\x20ligne\x22]','7wxdJwo','querySelector','75kEKOUE','click','Button\x20check\x20script\x20user\x20activity\x20found\x20:\x20store\x20user\x20activity','145409QZgmeq','4977440cfHVJs','button.slds-button.slds-button--neutral.moveToNextButton.uiButton','button.slds-button.slds-button--neutral.checkNextButtonUserActivityV2.uiButton','10tYNZAE','Element\x20with\x20\x27Online\x20Status\x27\x20not\x20found','2508YlGqBF','6159736UsGScf','31332brgXBk','848349rlOSsQ','Button\x20next\x20not\x20found','1195433lAqFdO','log','8GqBbfz'];_0x45d1=function(){return _0x5c4b43;};return _0x45d1();}function _0x32df(_0x1d782d,_0x19064b){const _0x45d130=_0x45d1();return _0x32df=function(_0x32dfe3,_0x2f949b){_0x32dfe3=_0x32dfe3-0xb8;let _0x40933b=_0x45d130[_0x32dfe3];return _0x40933b;},_0x32df(_0x1d782d,_0x19064b);}(function(_0x167c23,_0x34b2bb){const _0x473466=_0x32df,_0x51209c=_0x167c23();while(!![]){try{const _0x1a4334=-parseInt(_0x473466(0xb9))/0x1+-parseInt(_0x473466(0xbb))/0x2*(parseInt(_0x473466(0xbd))/0x3)+parseInt(_0x473466(0xc6))/0x4+-parseInt(_0x473466(0xc2))/0x5*(parseInt(_0x473466(0xcd))/0x6)+parseInt(_0x473466(0xc0))/0x7*(-parseInt(_0x473466(0xcc))/0x8)+parseInt(_0x473466(0xce))/0x9*(-parseInt(_0x473466(0xc9))/0xa)+parseInt(_0x473466(0xc5))/0xb*(parseInt(_0x473466(0xcb))/0xc);if(_0x1a4334===_0x34b2bb)break;else _0x51209c['push'](_0x51209c['shift']());}catch(_0x1867ba){_0x51209c['push'](_0x51209c['shift']());}}}(_0x45d1,0xbc158),(function(){'use strict';const _0x4d4238=0x4e20,_0x130c38=0x7530;function _0xfe5a51(){const _0x2023d5=_0x32df;let _0x464c33=_0x3ccf4c();if(_0x464c33){let _0xf115ae=document[_0x2023d5(0xc1)](_0x2023d5(0xc7));_0xf115ae?(_0xf115ae[_0x2023d5(0xc3)](),console['log']('Button\x20next\x20clicked')):console[_0x2023d5(0xba)](_0x2023d5(0xb8));}}function _0x52d3ea(){const _0x54aa65=_0x32df;let _0x4a0876=document[_0x54aa65(0xc1)](_0x54aa65(0xc8));_0x4a0876?(_0x4a0876[_0x54aa65(0xc3)](),console[_0x54aa65(0xba)](_0x54aa65(0xc4))):console['log']('Button\x20check\x20script\x20user\x20activity\x20not\x20found');}function _0x3ccf4c(){const _0x308bdc=_0x32df;let _0x361888=document[_0x308bdc(0xc1)](_0x308bdc(0xbe)),_0x81f004=document[_0x308bdc(0xc1)](_0x308bdc(0xbf));return _0x361888||_0x81f004?(console['log'](_0x308bdc(0xbc)),!![]):(console[_0x308bdc(0xba)](_0x308bdc(0xca)),![]);}let _0x58432c=setInterval(_0x52d3ea,_0x130c38),_0x215b9d=setInterval(_0xfe5a51,_0x4d4238);}()));
