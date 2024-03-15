@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         PROD Auto Next Dialler
+// @name         PROD Auto Next Dialler no obfuscate 
 // @namespace    Ornikar-Salesforce
 // @version      1.9.2
 // @downloadURL  https://github.com/ornikar/script-next-automatic-dialler/raw/main/prod-autonextdial.user.js
