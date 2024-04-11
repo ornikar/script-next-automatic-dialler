@@ -13,7 +13,6 @@
 // ==/UserScript==
 
 // Date : 07-03-2024
-// Test Yann
 
 (function() {
     'use strict';
