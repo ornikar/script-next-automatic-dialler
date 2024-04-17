@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name         UAT Auto Next Dialler no obfuscate
+// @name         UAT Auto Next Dialler no obfuscate with PC/VC check
 // @namespace    Ornikar-Salesforce
-// @version      1.9.2
-// @downloadURL  https://github.com/ornikar/script-next-automatic-dialler/raw/main/uat-autonextdial.user.js
-// @updateURL    https://github.com/ornikar/script-next-automatic-dialler/raw/main/uat-autonextdial.user.js
-// @description  Automatically click the next button on the dialler component every 20 seconds
+// @version      1.9.4
+// @downloadURL  https://github.com/ornikar/script-next-automatic-dialler/raw/main/prod-autonextdial-no-obfuscate.user.js
+// @updateURL    https://github.com/ornikar/script-next-automatic-dialler/raw/main/prod-autonextdial-no-obfuscate.user.js
+// @description  Automatically click the next button on the dialler component every 5 seconds
 // @author       Team Salesforce Ornikar
 // @match        https://*.lightning.force.com/lightning*
 // @match        https://*.lightning.force.com/one*
@@ -12,30 +12,49 @@
 // @grant        none
 // ==/UserScript==
 
-// Date : 07-03-2024
+// Date : 06-03-2024
 
 (function() {
     'use strict';
 
-    const delayClickNextButton = 20000; // 20 seconds
+    const delayClickNextButton = 5000; // 5 seconds
     const delayCheckScriptActivity = 30000; // 30 seconds
+    const regexPlannedCall = /PC-2024\d{8} \| Planned Call/g; // Regex to find any Planned Call tab open
+    const regexVoiceCall= /VC-\d{8}/g; // Regex to find any Voice Call tab open
+
+    function checkVoiceCalls() {
+        const matchedVoiceCall = document.body.innerText.match(regexVoiceCall);
+        console.log(`Voice Call matches found: ${matchedVoiceCall ? matchedVoiceCall.length : 0}`);
+
+        return !matchedVoiceCall || matchedVoiceCall.length === 0;
+    }
+
+    function checkPlannedCalls() {
+        const matchedPlannedCall = document.body.innerText.match(regexPlannedCall);
+        console.log(`Planned Call matches found: ${matchedPlannedCall ? matchedPlannedCall.length : 0}`);
+
+        return !matchedPlannedCall || matchedPlannedCall.length === 0;
+    }
 
     // Define a function that tries to find the next button and click it
     function clickNextButton() {
         let isUserOnline = checkOnlineStatus();
+        let noPlannedCall = checkPlannedCalls();
+        let noVoiceCall = checkVoiceCalls();
 
-        if (isUserOnline) {
+        if (isUserOnline && noPlannedCall && noVoiceCall) {
             // Try to find the next button by its selector
             let buttonNext = document.querySelector("button.slds-button.slds-button--neutral.moveToNextButton.uiButton");
             // Check if the next button exists
             if (buttonNext) {
                 // Click the next button, log a message
                 buttonNext.click();
-                console.log("Button next clicked");
+                console.log("Next Button clicked");
             } else {
-                // Log a message that the next button is not found
                 console.log("Button next not found");
             }
+        } else {
+            console.log("Button next won't be clicked due to matches or online status.");
         }
     }
 
