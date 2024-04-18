@@ -24,7 +24,7 @@
 
     // Check if there is a voice call opened in one of the console tabs.
     function checkVoiceCalls() {
-        const tabItems = document.querySelector('li.oneConsoleTabItem');
+        const tabItems = document.querySelectorAll('li.oneConsoleTabItem');
         let matchedVoiceCall = [];
     
         tabItems.forEach(item => {
@@ -37,7 +37,7 @@
     }
      // Check if there is a planned call opened in one of the console tabs.
     function checkPlannedCalls() {
-        const tabItems = document.querySelector('li.oneConsoleTabItem');
+        const tabItems = document.querySelectorAll('li.oneConsoleTabItem');
         let matchedPlannedCall = [];
     
         tabItems.forEach(item => {
