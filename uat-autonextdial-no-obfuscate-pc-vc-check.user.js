@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         UAT Auto Next Dialler no obfuscate with PC/VC check
 // @namespace    Ornikar-Salesforce
-// @version      1.9.4
+// @version      1.9.5
 // @downloadURL  https://github.com/ornikar/script-next-automatic-dialler/raw/main/prod-autonextdial-no-obfuscate.user.js
 // @updateURL    https://github.com/ornikar/script-next-automatic-dialler/raw/main/prod-autonextdial-no-obfuscate.user.js
 // @description  Automatically click the next button on the dialler component every 5 seconds
@@ -12,27 +12,40 @@
 // @grant        none
 // ==/UserScript==
 
-// Date : 06-03-2024
+// Date : 18-04-2024
 
 (function() {
     'use strict';
 
     const delayClickNextButton = 5000; // 5 seconds
     const delayCheckScriptActivity = 30000; // 30 seconds
-    const regexPlannedCall = /PC-2024\d{8} \| Planned Call/g; // Regex to find any Planned Call tab open
+    const regexPlannedCall = /PC-2024\d{9} \| Planned Call/g; // Regex to find any Planned Call tab open
     const regexVoiceCall= /VC-\d{8}/g; // Regex to find any Voice Call tab open
 
+    // Check if there is a voice call opened in one of the console tabs.
     function checkVoiceCalls() {
-        const matchedVoiceCall = document.body.innerText.match(regexVoiceCall);
-        console.log(`Voice Call matches found: ${matchedVoiceCall ? matchedVoiceCall.length : 0}`);
-
+        const tabItems = document.querySelectorAll('li.oneConsoleTabItem');
+        let matchedVoiceCall = [];
+    
+        tabItems.forEach(item => {
+            const match = item.textContent.match(regexVoiceCall);
+            if (match) matchedVoiceCall = matchedVoiceCall.concat(match);
+        });
+    
+        console.log(`Voice Call matches found: ${matchedVoiceCall.length}`);
         return !matchedVoiceCall || matchedVoiceCall.length === 0;
     }
-
+     // Check if there is a planned call opened in one of the console tabs.
     function checkPlannedCalls() {
-        const matchedPlannedCall = document.body.innerText.match(regexPlannedCall);
-        console.log(`Planned Call matches found: ${matchedPlannedCall ? matchedPlannedCall.length : 0}`);
-
+        const tabItems = document.querySelectorAll('li.oneConsoleTabItem');
+        let matchedPlannedCall = [];
+    
+        tabItems.forEach(item => {
+            const match = item.textContent.match(regexPlannedCall);
+            if (match) matchedPlannedCall = matchedPlannedCall.concat(match);
+        });
+    
+        console.log(`Planned Call matches found: ${matchedPlannedCall.length}`);
         return !matchedPlannedCall || matchedPlannedCall.length === 0;
     }
 
