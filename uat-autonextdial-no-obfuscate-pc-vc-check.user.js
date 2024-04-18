@@ -2,8 +2,8 @@
 // @name         UAT Auto Next Dialler no obfuscate with PC/VC check
 // @namespace    Ornikar-Salesforce
 // @version      1.9.5
-// @downloadURL  https://github.com/ornikar/script-next-automatic-dialler/raw/main/prod-autonextdial-no-obfuscate.user.js
-// @updateURL    https://github.com/ornikar/script-next-automatic-dialler/raw/main/prod-autonextdial-no-obfuscate.user.js
+// @downloadURL  https://github.com/ornikar/script-next-automatic-dialler/raw/main/uat-autonextdial-no-obfuscate-pc-vc-check.user.js
+// @updateURL    https://github.com/ornikar/script-next-automatic-dialler/raw/main/uat-autonextdial-no-obfuscate-pc-vc-check.user.js
 // @description  Automatically click the next button on the dialler component every 5 seconds
 // @author       Team Salesforce Ornikar
 // @match        https://*.lightning.force.com/lightning*
