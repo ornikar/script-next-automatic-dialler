@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PROD Auto Next Dialler no obfuscate 
 // @namespace    Ornikar-Salesforce
-// @version      1.9.2
+// @version      1.9.3
 // @downloadURL  https://github.com/ornikar/script-next-automatic-dialler/raw/main/prod-autonextdial.user.js
 // @updateURL    https://github.com/ornikar/script-next-automatic-dialler/raw/main/prod-autonextdial.user.js
 // @description  Automatically click the next button on the dialler component every 5 seconds
@@ -12,7 +12,7 @@
 // @grant        none
 // ==/UserScript==
 
-// Date : 06-03-2024
+// Date : 01-07-2024
 
 (function() {
     'use strict';
@@ -26,7 +26,7 @@
 
         if (isUserOnline) {
             // Try to find the next button by its selector
-            let buttonNext = document.querySelector("button.slds-button.slds-button--neutral.moveToNextButton.uiButton");
+            let buttonNext = document.querySelector("button.slds-button.slds-button_neutral.moveToNextButton.uiButton");
             // Check if the next button exists
             if (buttonNext) {
                 // Click the next button, log a message
